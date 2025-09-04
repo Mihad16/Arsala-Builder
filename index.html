@@ -38,16 +38,63 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Building Excellence <span>in Kasaragod</span></h1>
-            <p>With over 30 successful projects and a team of 70+ professionals, we deliver exceptional construction services with a focus on quality, innovation, and customer satisfaction.</p>
-            <a href="#about" class="btn">Our Story</a>
-            <a href="#contact" class="btn btn-outline">Get a Quote</a>
-            <div class="trust-badges">
-                <span><i class="fas fa-check-circle"></i> 30+ Projects Completed</span>
-                <span><i class="fas fa-users"></i> 50+ Happy Clients</span>
-                <span><i class="fas fa-award"></i> Licensed & Insured</span>
+        <div class="hero-slider">
+            <!-- Slide 1 -->
+            <div class="hero-slide active" style="background-image: url('image/hero.jpg')">
+                <div class="hero-content">
+                    <h1>Building Excellence <span>in Kasaragod</span></h1>
+                    <p>With over 30 successful projects and a team of 70+ professionals, we deliver exceptional construction services with a focus on quality, innovation, and customer satisfaction.</p>
+                    <div class="hero-buttons">
+                        <a href="#about" class="btn">Our Story</a>
+                        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Slide 2 -->
+            <div class="hero-slide" style="background-image: url('image/hero1.jpg')">
+                <div class="hero-content">
+                    <h1>Innovative <span>Construction Solutions</span></h1>
+                    <p>Transforming visions into reality with cutting-edge technology and sustainable building practices for a better tomorrow.</p>
+                    <div class="hero-buttons">
+                        <a href="#services" class="btn">Our Services</a>
+                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="hero-slide" style="background-image: url('image/hero.webp')">
+                <div class="hero-content">
+                    <h1>Your Trusted <span>Construction Partner</span></h1>
+                    <p>Building lasting relationships through transparency, integrity, and exceptional workmanship on every project.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn">Contact Us</a>
+                        <a href="#projects" class="btn btn-outline">Our Work</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slider Controls -->
+            <button class="slider-control prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-control next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Slider Indicators -->
+            <div class="slider-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+            </div>
+        </div>
+        
+        <div class="trust-badges">
+            <span><i class="fas fa-check-circle"></i> 30+ Projects Completed</span>
+            <span><i class="fas fa-users"></i> 50+ Happy Clients</span>
+            <span><i class="fas fa-award"></i> Licensed & Insured</span>
         </div>
     </section>
 
@@ -173,7 +220,7 @@
                     <a href="#contact" class="btn">Start Your Project</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1581092162427-9f5d5d9e3e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Arsala Builder Team">
+                    <img src="/image/about.jpeg" alt="Arsala Builder Team">
                     <div class="experience-badge">
                         <span class="years">15+</span>
                         <span class="text">Years of Experience</span>
@@ -503,5 +550,6 @@
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
     <script src="js/main.js"></script>
+    <script src="js/hero-slider.js"></script>
 </body>
 </html>
