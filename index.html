@@ -10,91 +10,108 @@
     <meta name="author" content="Arsala Builder Private Limited">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <h1>Arsala <span>Builder</span></h1>
-            </div>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
-    </header>
+  <div class="container">
+    <div class="logo">
+      <!-- Image Logo -->
+      <a href="#home">
+        <img src="/image/logo.jpeg" alt="Arsala Builder Logo" class="logo-img" />
+      </a>
+      <!-- Text Logo (optional, can remove if you want only image) -->
+      <h1>Arsala <span>Builder</span></h1>
+    </div>
+
+    <nav class="nav">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="hamburger">
+  <i class="fa-solid fa-bars"></i>
+</div>
+
+    </nav>
+  </div>
+</header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-slider">
             <!-- Slide 1 -->
             <div class="hero-slide active" style="background-image: url('image/hero.jpg')">
-                <div class="hero-content">
-                    <h1>Building Excellence <span>in Kasaragod</span></h1>
-                    <p>With over 30 successful projects and a team of 70+ professionals, we deliver exceptional construction services with a focus on quality, innovation, and customer satisfaction.</p>
-                    <div class="hero-buttons">
-                        <a href="#about" class="btn">Our Story</a>
-                        <a href="#contact" class="btn btn-outline">Get a Quote</a>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">15+ Years Experience</span>
+                        <h1 class="hero-title">Building Dreams into <span>Reality</span></h1>
+                        <p class="hero-subtitle">Expert construction and renovation services with over 15 years of excellence in Kasaragod.</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                            <a href="#about" class="btn btn-outline">Learn More</a>
+                        </div>
                     </div>
                 </div>
+                <div class="slide-overlay"></div>
             </div>
             
             <!-- Slide 2 -->
             <div class="hero-slide" style="background-image: url('image/hero1.jpg')">
-                <div class="hero-content">
-                    <h1>Innovative <span>Construction Solutions</span></h1>
-                    <p>Transforming visions into reality with cutting-edge technology and sustainable building practices for a better tomorrow.</p>
-                    <div class="hero-buttons">
-                        <a href="#services" class="btn">Our Services</a>
-                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Quality Craftsmanship</span>
+                        <h1 class="hero-title">Precision in <span>Every Detail</span></h1>
+                        <p class="hero-subtitle">Delivering exceptional quality with attention to every detail in construction and design.</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary">Our Services</a>
+                            <a href="#projects" class="btn btn-outline">View Projects</a>
+                        </div>
                     </div>
                 </div>
+                <div class="slide-overlay"></div>
             </div>
             
             <!-- Slide 3 -->
-            <div class="hero-slide" style="background-image: url('image/hero.webp')">
-                <div class="hero-content">
-                    <h1>Your Trusted <span>Construction Partner</span></h1>
-                    <p>Building lasting relationships through transparency, integrity, and exceptional workmanship on every project.</p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn">Contact Us</a>
-                        <a href="#projects" class="btn btn-outline">Our Work</a>
+            <div class="hero-slide" style="background-image: url('image/hero2.jpg')">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Innovative Solutions</span>
+                        <h1 class="hero-title">Transforming <span>Spaces</span></h1>
+                        <p class="hero-subtitle">Creative and functional designs that bring your vision to life with modern construction techniques.</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">Start Project</a>
+                            <a href="#about" class="btn btn-outline">Our Process</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Slider Controls -->
-            <button class="slider-control prev" aria-label="Previous slide">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-control next" aria-label="Next slide">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Indicators -->
-            <div class="slider-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
+                <div class="slide-overlay"></div>
             </div>
         </div>
         
-        <div class="trust-badges">
-            <span><i class="fas fa-check-circle"></i> 30+ Projects Completed</span>
-            <span><i class="fas fa-users"></i> 50+ Happy Clients</span>
-            <span><i class="fas fa-award"></i> Licensed & Insured</span>
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <!-- Slider Indicators -->
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+        
+        <!-- Experience Badge -->
+        <div class="experience-badge">
+            <span class="years">15+</span>
+            <span class="text">Years Experience</span>
         </div>
     </section>
 
@@ -102,34 +119,85 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">Comprehensive construction solutions tailored to your needs</p>
+                <span class="section-tag">WHAT WE DO</span>
+                <h2 class="section-title">Expert Construction Services</h2>
+                <p class="section-subtitle">Delivering excellence in every project with precision and expertise</p>
             </div>
             <div class="services-grid">
+                <!-- Service Card 1 -->
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-icon-wrapper">
                         <i class="fas fa-home"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Residential Construction</h3>
-                    <p>From dream homes to apartment complexes, we bring your vision to life with quality craftsmanship and attention to detail.</p>
-                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <p>Custom home building and renovation services designed to bring your dream home to life with quality craftsmanship.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+                
+                <!-- Service Card 2 -->
                 <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-icon-wrapper">
                         <i class="fas fa-building"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Commercial Projects</h3>
-                    <p>Expertly designed and constructed commercial spaces that combine functionality with aesthetic appeal.</p>
-                    <a href="#contact" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <p>Expert commercial construction services for offices, retail spaces, and business complexes with a focus on functionality.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+                
+                <!-- Service Card 3 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-school"></i>
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-hammer"></i>
+                        <div class="icon-bg"></div>
                     </div>
-                    <h3>Institutional Buildings</h3>
-                    <p>Specialized construction services for educational institutions, healthcare facilities, and government buildings.</p>
-                    <a href="#contact" class="learn-more">Our Approach <i class="fas fa-arrow-right"></i></a>
+                    <h3>Renovation</h3>
+                    <p>Transform your existing space with our professional renovation services, from minor updates to complete makeovers.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-tools"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>End-to-end project management ensuring your construction project is completed on time and within budget.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-drafting-compass"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Architectural Design</h3>
+                    <p>Innovative architectural solutions that blend aesthetics, functionality, and sustainability.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <i class="fas fa-hard-hat"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Consulting</h3>
+                    <p>Expert construction consulting services to guide you through every stage of your building project.</p>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <div class="cta-banner">
+                <div class="cta-content">
+                    <h3>Ready to start your project?</h3>
+                    <p>Get a free consultation with our expert team today.</p>
+                </div>
+                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+            </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-industry"></i>
@@ -140,20 +208,33 @@
                 </div>
             </div>
             <div class="additional-services">
-                <div class="service-feature">
-                    <i class="fas fa-drafting-compass"></i>
-                    <h4>Architectural Design</h4>
-                    <p>Innovative and sustainable architectural solutions</p>
-                </div>
-                <div class="service-feature">
-                    <i class="fas fa-tools"></i>
-                    <h4>Interior Design</h4>
-                    <p>Elegant and functional interior spaces</p>
-                </div>
-                <div class="service-feature">
-                    <i class="fas fa-hard-hat"></i>
-                    <h4>Project Management</h4>
-                    <p>End-to-end project supervision and execution</p>
+                <div class="services-container">
+                    <div class="service-card-alt">
+                        <div class="service-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h3>Architectural Design</h3>
+                        <p>Innovative and sustainable architectural solutions tailored to your vision and requirements.</p>
+                        <a href="#contact" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card-alt">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-roller"></i>
+                        </div>
+                        <h3>Interior Design</h3>
+                        <p>Elegant and functional interior spaces that combine aesthetics with practicality.</p>
+                        <a href="#contact" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="service-card-alt">
+                        <div class="service-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Project Management</h3>
+                        <p>End-to-end project supervision ensuring quality, budget, and timeline adherence.</p>
+                        <a href="#contact" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -167,32 +248,55 @@
                 <p class="section-subtitle">Building trust through excellence in construction</p>
             </div>
             <div class="about-content">
+                <div class="about-image">
+                    <img src="/image/about.jpeg" alt="Our Construction Site" class="about-img">
+                </div>
                 <div class="about-text">
-                    <div class="about-intro">
-                        <p>Arsala Builder Private Limited is a leading construction company based in Kasaragod, India, known for our commitment to quality, innovation, and customer satisfaction. With a team of 70+ dedicated professionals, we've successfully delivered over 30 projects, earning the trust of 50+ satisfied clients.</p>
-                    </div>
-                    
-                    <div class="leadership">
-                        <h3>Our Leadership</h3>
-                        <div class="leader-profile">
-                            <h4>Iqbal Nalupurappattil</h4>
-                            <p class="position">Founder & Managing Director</p>
-                            <p>With over 15 years of experience in contracting and interior design, Iqbal brings extensive expertise in project management and client relations. His previous role as manager of an exporting company and 15 years of experience in the UAE as a PRO and secretary to the Sheikh of Dubai have shaped his visionary leadership.</p>
-                        </div>
-                        <div class="leader-profile">
-                            <h4>Nassir Malingal</h4>
-                            <p class="position">Co-Founder & Director</p>
-                            <p>Nassir's expertise in construction and interior design was honed through his work on prestigious projects like the Dubai Mall and Emirates Post. His attention to detail and commitment to quality ensure every project meets the highest standards.</p>
-                        </div>
-                    </div>
+                    <h3>Building Dreams Into Reality Since 2010</h3>
+                    <p>Founded with a vision to redefine construction excellence, Arsala Builder has grown from a small local contractor to one of the most trusted names in the industry. Our journey has been marked by a steadfast commitment to quality, innovation, and customer satisfaction.</p>
                     
                     <div class="philosophy">
-                        <h3>Our Philosophy</h3>
+                        <h3>Our Approach</h3>
                         <div class="philosophy-grid">
                             <div class="philosophy-item">
-                                <i class="fas fa-bullseye"></i>
-                                <h4>Mission</h4>
-                                <p>To be the most trusted name in construction by delivering exceptional quality, innovative solutions, and unmatched customer service while maintaining the highest standards of safety and sustainability.</p>
+                                <i class="fas fa-medal"></i>
+                                <h4>Experience</h4>
+                                <p>With over 10 years in the industry, we bring extensive expertise to every project.</p>
+                            </div>
+                            <div class="philosophy-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <h4>Quality</h4>
+                                <p>We never compromise on quality, using only the best materials and workmanship.</p>
+                            </div>
+                            <div class="philosophy-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Integrity</h4>
+                                <p>We build lasting relationships based on trust, transparency, and exceptional service.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                    
+                    <p>Our team of skilled professionals combines traditional craftsmanship with modern techniques to deliver projects that stand the test of time. We believe in building lasting relationships with our clients, based on trust, transparency, and exceptional service.</p>
+                    
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
                             </div>
                             <div class="philosophy-item">
                                 <i class="fas fa-eye"></i>
@@ -220,7 +324,7 @@
                     <a href="#contact" class="btn">Start Your Project</a>
                 </div>
                 <div class="about-image">
-                    <img src="/image/about.jpeg" alt="Arsala Builder Team">
+                    <img src="/image/" alt="Arsala Builder Team">
                     <div class="experience-badge">
                         <span class="years">15+</span>
                         <span class="text">Years of Experience</span>
@@ -230,105 +334,59 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <!-- Team Section -->
+    <section id="team" class="team">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Portfolio</h2>
-                <p class="section-subtitle">Showcasing our completed projects and construction excellence</p>
+                <h2 class="section-title">Our Leadership</h2>
+                <p class="section-subtitle">Meet the dedicated professionals behind our success</p>
             </div>
-            
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="residential">Residential</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="institutional">Institutional</button>
-                <button class="filter-btn" data-filter="industrial">Industrial</button>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Residential Projects -->
-                <div class="project-item" data-category="residential">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Villa Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Residential</span>
-                            <h3>Luxury Villas, Kasaragod</h3>
-                            <p>A gated community of 15 luxury villas with modern amenities and sustainable design.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/image/iqbal.jpeg" alt="Iqbal Nalupurappatil">
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Iqbal Nalupurappatil</h3>
+                        <p class="role">Founder & Cheirman</p>
+                        <p class="bio">With over 20 years in the construction industry, Iqbal leads our team with vision and expertise.</p>
                     </div>
                 </div>
-                
-                <!-- Commercial Projects -->
-                <div class="project-item" data-category="commercial">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Complex Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Commercial</span>
-                            <h3>Tech Park, Mangalore</h3>
-                            <p>5-story IT park with state-of-the-art facilities and green building certification.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Nassir Malingal">
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                         </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Nassir Malingal</h3>
+                        <p class="role">Co-Founder & Director</p>
+                        <p class="bio">Nassir's expertise in construction and interior design was honed through his work on prestigious projects like the Dubai Mall and Emirates Post. His attention to detail and commitment to quality ensure every project meets the highest standards.</p>
                     </div>
                 </div>
+
                 
-                <!-- Institutional Projects -->
-                <div class="project-item" data-category="institutional">
-                    <img src="https://images.unsplash.com/photo-1523050853548-9c409e15db68?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="School Building Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Institutional</span>
-                            <h3>Global Public School</h3>
-                            <p>Modern educational campus with smart classrooms and sports facilities.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Industrial Projects -->
-                <div class="project-item" data-category="industrial">
-                    <img src="https://images.unsplash.com/photo-1581093451110-8ad28f0c1299?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrial Facility Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Industrial</span>
-                            <h3>Food Processing Unit</h3>
-                            <p>50,000 sq.ft. facility with cold storage and processing units.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mixed-Use Project -->
-                <div class="project-item" data-category="commercial residential">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mixed-Use Development Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Mixed-Use</span>
-                            <h3>City Center Mall & Residences</h3>
-                            <p>Integrated development with retail, office, and residential spaces.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Healthcare Project -->
-                <div class="project-item" data-category="institutional">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hospital Project">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <span class="project-category">Healthcare</span>
-                            <h3>City General Hospital</h3>
-                            <p>200-bed multi-specialty hospital with advanced medical facilities.</p>
-                            <a href="#" class="project-link" aria-label="View project details"><i class="fas fa-search-plus"></i></a>
-                        </div>
-                    </div>
                 </div>
             </div>
-            
-            <div class="project-cta">
-                <p>Want to see more of our work? We'd love to show you our complete portfolio and discuss how we can bring your project to life.</p>
-                <a href="#contact" class="btn">Schedule a Consultation</a>
+
+                <!-- Hide the second team member -->
+                
+                          
+                        </div>
+                    </div>
+                  
+                </div>
             </div>
         </div>
     </section>
@@ -444,16 +502,18 @@
             </div>
             
             <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31184.12345678901!2d74.987654321!3d12.3456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba482155defffff%3A0x1234567890abcdef!2sKasaragod%2C%20Kerala!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy"
-                    title="Our Location on Map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1961.1865311295965!2d75.0473026777675!3d12.382800847325742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba47fe7089af1d9%3A0x9e7ddac9efc4bf29!2sARSALA%20BUILDER%20Pvt.%20Ltd!5e1!3m2!1sen!2sin!4v1757093097372!5m2!1sen!2sin"
+                  width="100%"
+                  height="450"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Our Location on Map">
                 </iframe>
-            </div>
+              </div>
+              
         </div>
     </section>
 
@@ -490,7 +550,6 @@
                             <li><a href="#home">Home</a></li>
                             <li><a href="#about">About Us</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
@@ -518,15 +577,7 @@
                             <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane"></i></button>
                         </div>
                     </form>
-                    <div class="footer-payment">
-                        <p>We Accept:</p>
-                        <div class="payment-methods">
-                            <i class="fab fa-cc-visa" title="Visa"></i>
-                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                            <i class="fab fa-cc-paypal" title="PayPal"></i>
-                            <i class="fas fa-university" title="Bank Transfer"></i>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             

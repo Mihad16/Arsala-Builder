@@ -1,63 +1,297 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // ============================================
+    // Mobile Navigation
+    // ============================================
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-links li');
     const body = document.body;
+    let isMenuAnimating = false;
 
-    // Toggle mobile menu
+    // Create overlay for mobile menu if it doesn't exist
+    let navOverlay = document.querySelector('.nav-overlay');
+    if (!navOverlay) {
+        navOverlay = document.createElement('div');
+        navOverlay.className = 'nav-overlay';
+        document.body.appendChild(navOverlay);
+    }
+
+    /**
+     * Toggle mobile menu with smooth animation
+     */
     function toggleMenu() {
+        if (isMenuAnimating) return;
+        isMenuAnimating = true;
+        
         const isMenuOpen = !navLinks.classList.contains('active');
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
         
-        // Toggle body scroll
         if (isMenuOpen) {
+            // Open menu
+            navLinks.classList.add('active');
+            hamburger.classList.add('active');
+            navOverlay.classList.add('active');
             body.classList.add('menu-open');
-            document.addEventListener('touchmove', preventScroll, { passive: false });
+            
+            // Disable scroll
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+            
+            // Animate links with staggered delay
+            navLinksItems.forEach((link, index) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateX(20px)';
+                link.style.transition = `opacity 0.3s ease ${index * 0.1}s, transform 0.3s ease ${index * 0.1}s`;
+                
+                // Force reflow
+                void link.offsetWidth;
+                
+                link.style.opacity = '1';
+                link.style.transform = 'translateX(0)';
+            });
+            
+            // Enable interaction after animation
+            setTimeout(() => {
+                isMenuAnimating = false;
+            }, 500);
+            
         } else {
-            body.classList.remove('menu-open');
-            document.removeEventListener('touchmove', preventScroll);
+            // Close menu
+            navLinksItems.forEach((link) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateX(20px)';
+            });
+            
+            setTimeout(() => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.classList.remove('menu-open');
+                
+                // Re-enable scroll
+                document.documentElement.style.overflow = '';
+                document.body.style.overflow = '';
+                
+                // Reset styles
+                navLinksItems.forEach(link => {
+                    link.style.opacity = '';
+                    link.style.transform = '';
+                    link.style.transition = '';
+                });
+                
+                isMenuAnimating = false;
+            }, 300);
+        }
+    }
+
+    /**
+     * Close menu when clicking outside or on links
+     */
+    function closeMenu() {
+        if (navLinks.classList.contains('active')) {
+            toggleMenu();
+        }
+    }
+
+    /**
+     * Smooth scroll to section
+     */
+    function smoothScrollTo(targetId) {
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Initialize event listeners
+    function initEventListeners() {
+        // Toggle menu on hamburger click
+        if (hamburger) {
+            hamburger.addEventListener('click', toggleMenu);
         }
         
-        // Animate links
-        if (isMenuOpen) {
-            navLinksItems.forEach((link, index) => {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        // Close menu when clicking overlay
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMenu);
+        }
+        
+        // Handle navigation link clicks
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href');
+                
+                // If it's an anchor link
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 991) {
+                        closeMenu();
+                    }
+                    
+                    // Smooth scroll to section
+                    smoothScrollTo(targetId);
+                }
+            });
+        });
+        
+        // Close menu when window is resized to desktop
+        function handleResize() {
+            if (window.innerWidth > 991 && navLinks.classList.contains('active')) {
+                closeMenu();
+            }
+        }
+        
+        // Add resize event listener
+        window.addEventListener('resize', handleResize);
+    }
+    
+    // Initialize the navigation
+    initEventListeners();
+    
+    // ============================================
+    // Smooth scrolling for all anchor links
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; // Skip empty anchors
+            
+            e.preventDefault();
+            smoothScrollTo(targetId);
+        });
+    });
+    
+    // ============================================
+    // Sticky header on scroll
+    // ============================================
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+    
+    if (header) {
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add/remove sticky class based on scroll position
+            if (scrollTop > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+            
+            // Hide header on scroll down, show on scroll up
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                // Scrolling down
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    }
+    
+    // ============================================
+    // Active navigation link highlighting
+    // ============================================
+    const sections = document.querySelectorAll('section[id]');
+    
+    function highlightNav() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Run once on page load
+    highlightNav();
+    
+    // Highlight nav on scroll
+    window.addEventListener('scroll', () => {
+        highlightNav();
+    });
+    
+    // ============================================
+    // Lazy loading for images
+    // ============================================
+    if ('loading' in HTMLImageElement.prototype) {
+        // Native lazy loading is supported
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers that don't support loading="lazy"
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('loading');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
             });
         } else {
-            navLinksItems.forEach(link => {
-                link.style.animation = '';
-            });
+            // Fallback for very old browsers
+            let active = false;
+            
+            const lazyLoad = function() {
+                if (active === false) {
+                    active = true;
+                    
+                    setTimeout(() => {
+                        lazyImages.forEach(img => {
+                            if ((img.getBoundingClientRect().top <= window.innerHeight && 
+                                 img.getBoundingClientRect().bottom >= 0) && 
+                                getComputedStyle(img).display !== 'none') {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('loading');
+                            }
+                        });
+                        
+                        if (lazyImages.length === 0) {
+                            document.removeEventListener('scroll', lazyLoad);
+                            window.removeEventListener('resize', lazyLoad);
+                            window.removeEventListener('orientationchange', lazyLoad);
+                        }
+                        
+                        active = false;
+                    }, 200);
+                }
+            };
+            
+            document.addEventListener('scroll', lazyLoad);
+            window.addEventListener('resize', lazyLoad);
+            window.addEventListener('orientationchange', lazyLoad);
+            
+            // Initial check
+            lazyLoad();
         }
     }
-
-    // Prevent scrolling when menu is open
-    function preventScroll(e) {
-        if (hamburger.classList.contains('active')) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }
-
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking on a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (hamburger.classList.contains('active')) {
-                toggleMenu();
-            }
-            // Smooth scroll to section
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
