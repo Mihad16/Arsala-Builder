@@ -2234,7 +2234,7 @@ ul {
 .member-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
     width: 100%;
 }
 
@@ -2273,7 +2273,7 @@ ul {
     transform: translate(-50%, -50%) rotate(45deg);
     width: 113px;
     height: 113px;
-    background-color: #f39c1254;
+    background-color: #d38c07;
     border-radius: 20px;
 }
 
