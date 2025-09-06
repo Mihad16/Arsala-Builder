@@ -1,4 +1,119 @@
 /* Responsive Styles */
+
+/* Team Section Responsive */
+@media (max-width: 1199px) {
+    .team-section .section-title {
+        font-size: 3.2rem;
+    }
+    
+    .team-members {
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .team-section {
+        padding: 6rem 0;
+    }
+    
+    .team-section .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .team-members {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .team-section {
+        padding: 5rem 0;
+    }
+    
+    .team-section .section-title {
+        font-size: 2.6rem;
+    }
+    
+    .team-members {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        gap: 3rem;
+    }
+    
+    .team-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-section .section-title {
+        font-size: 2.4rem;
+    }
+    
+    .team-section .section-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .team-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 1199px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    
+    .footer-column:last-child {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        padding: 5rem 0 0;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .footer-column:last-child {
+        grid-column: auto;
+        max-width: 100%;
+    }
+    
+    .footer-about, 
+    .footer-links a,
+    .footer-contact li,
+    .newsletter-form .form-control {
+        font-size: 1.5rem;
+    }
+    
+    .footer-bottom .separator {
+        display: block;
+        height: 1px;
+        width: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 1rem auto;
+    }
+}
+
+/* Fix for mobile menu overlapping footer */
+@media (max-width: 767px) {
+    .mobile-menu-active .footer {
+        display: none;
+    }
+}
 @media (max-width: 1200px) {
     .container {
         max-width: 100%;
@@ -54,7 +169,43 @@
     }
 }
 
+/* Team Section Mobile */
 @media (max-width: 768px) {
+    .team {
+        padding: 6rem 0;
+    }
+    
+    .team .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .team .section-subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 3rem;
+    }
+    
+    .member-image {
+        height: 350px;
+    }
+    
+    .member-info {
+        padding: 2rem;
+    }
+    
+    .member-info h3 {
+        font-size: 2rem;
+    }
+    
+    .member-info .bio {
+        font-size: 1.4rem;
+    }
     html {
         font-size: 56%;
     }

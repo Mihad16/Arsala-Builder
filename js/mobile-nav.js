@@ -1,10 +1,59 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu elements
+    // Navbar elements
+    const header = document.querySelector('.header');
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
     const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
     const navLinks = document.querySelectorAll('.nav-links a');
     const body = document.body;
+    
+    // Navbar scroll effect
+    let lastScroll = 0;
+    let headerHeight = header.offsetHeight;
+    let ticking = false;
+    
+    function updateHeader(currentScroll) {
+        // Add/remove scrolled class based on scroll position
+        if (currentScroll > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        
+        // Hide/show navbar on scroll
+        if (currentScroll <= 0) {
+            header.style.transform = 'translateY(0)';
+            return;
+        }
+        
+        if (currentScroll > lastScroll && currentScroll > headerHeight) {
+            // Scrolling down
+            header.classList.remove('scroll-up');
+            header.classList.add('scroll-down');
+            header.style.transform = `translateY(-${headerHeight}px)`;
+        } else if (currentScroll < lastScroll) {
+            // Scrolling up
+            header.classList.remove('scroll-down');
+            header.classList.add('scroll-up');
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScroll = currentScroll;
+        ticking = false;
+    }
+    
+    function handleScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateHeader(window.pageYOffset);
+            });
+            ticking = true;
+        }
+    }
+    
+    // Initial check
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Toggle mobile menu
     function toggleMobileMenu() {
@@ -51,14 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Handle window resize
     function handleResize() {
-        if (window.innerWidth > 768) {
-            // Reset mobile menu state when resizing to desktop
-            hamburger.classList.remove('is-active');
-            nav.classList.remove('active');
-            mobileMenuOverlay.classList.remove('active');
-            body.classList.remove('no-scroll');
-            hamburger.setAttribute('aria-expanded', 'false');
+        if (window.innerWidth > 992) {
+            closeMobileMenu();
+            // Reset transform on desktop
+            header.style.transform = '';
         }
+        
+        // Update header height on resize
+        headerHeight = header.offsetHeight;
     }
 
     // Add resize event listener
@@ -114,37 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Run once on page load
     highlightNavLink();
 
-    // Add scroll event for header
-    const header = document.querySelector('.header');
-    let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            // Scroll down
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            // Scroll up
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-        }
-        
-        lastScroll = currentScroll;
-        
-        // Add scrolled class when not at the top of the page
-        if (window.scrollY > 100) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    // Initial header state
+    updateHeader(window.pageYOffset);
 
     // Preloader
     const preloader = document.querySelector('.preloader');
