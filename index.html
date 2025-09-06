@@ -2,116 +2,229 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Arsala Builder Private Limited - Leading construction company in Kasaragod, India. Specializing in residential, commercial, institutional, and industrial building projects.">
     <title>Arsala Builder - Building Excellence in Kasaragod</title>
+    
+    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- SEO Meta Tags -->
     <meta name="keywords" content="Arsala Builder, Construction Company Kasaragod, Building Contractors, Civil Engineering, Interior Design, Construction Services India">
     <meta name="author" content="Arsala Builder Private Limited">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arsalabuilder.com/">
+    <meta property="og:title" content="Arsala Builder - Building Excellence in Kasaragod">
+    <meta property="og:description" content="Leading construction company in Kasaragod, India. Specializing in residential, commercial, institutional, and industrial building projects.">
+    <meta property="og:image" content="https://arsalabuilder.com/image/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arsalabuilder.com/">
+    <meta property="twitter:title" content="Arsala Builder - Building Excellence in Kasaragod">
+    <meta property="twitter:description" content="Leading construction company in Kasaragod, India. Specializing in residential, commercial, institutional, and industrial building projects.">
+    <meta property="twitter:image" content="https://arsalabuilder.com/image/og-image.jpg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Preconnect to important domains -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://maps.google.com">
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-  <div class="container">
-    <div class="logo">
-      <!-- Image Logo -->
-      <a href="#home">
-        <img src="/image/logo.jpeg" alt="Arsala Builder Logo" class="logo-img" />
-      </a>
-      <!-- Text Logo (optional, can remove if you want only image) -->
-      <h1>Arsala <span>Builder</span></h1>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-spinner"></div>
+            <div class="preloader-text">Loading...</div>
+        </div>
     </div>
+    <!-- Header -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="header">
+  <div class="container">
+    <a href="#home" class="logo">
+      <img src="image/logo.png" alt="Arsala Builder Logo" class="logo-img" width="50" height="50" loading="lazy">
+      <h1>Arsala <span>Builder</span></h1>
+    </a>
 
-    <nav class="nav">
+    <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-navigation">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+
+    <nav class="nav" id="main-navigation" aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
-      <div class="hamburger">
-  <i class="fa-solid fa-bars"></i>
-</div>
-
     </nav>
   </div>
 </header>
+<div class="mobile-menu-overlay"></div>
+<main id="main-content" tabindex="-1">
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-slider">
+        <div class="hero-slider" role="region" aria-label="Hero Slider">
             <!-- Slide 1 -->
-            <div class="hero-slide active" style="background-image: url('image/hero.jpg')">
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-badge">15+ Years Experience</span>
-                        <h1 class="hero-title">Building Dreams into <span>Reality</span></h1>
-                        <p class="hero-subtitle">Expert construction and renovation services with over 15 years of excellence in Kasaragod.</p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary">Get Free Quote</a>
-                            <a href="#about" class="btn btn-outline">Learn More</a>
+            <div class="hero-slide active" role="group" aria-roledescription="slide" aria-label="1 of 2">
+                <div class="hero-slide-inner">
+                    <picture>
+                        <source srcset="image/hero.webp" type="image/webp">
+                        <img 
+                            src="image/hero.jpg" 
+                            alt="Modern building construction site" 
+                            class="hero-slide-img" 
+                            loading="eager"
+                            width="1920"
+                            height="1080"
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+                    </picture>
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-badge">15+ Years Experience</span>
+                            <h1 class="hero-title">Building Dreams into <span>Reality</span></h1>
+                            <p class="hero-subtitle">Expert construction and renovation services with over 15 years of excellence in Kasaragod.</p>
+                            <div class="hero-buttons">
+                                <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                                <a href="#about" class="btn btn-outline">Learn More</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="slide-overlay"></div>
                 </div>
-                <div class="slide-overlay"></div>
             </div>
             
             <!-- Slide 2 -->
-            <div class="hero-slide" style="background-image: url('image/hero1.jpg')">
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-badge">Quality Craftsmanship</span>
-                        <h1 class="hero-title">Precision in <span>Every Detail</span></h1>
-                        <p class="hero-subtitle">Delivering exceptional quality with attention to every detail in construction and design.</p>
-                        <div class="hero-buttons">
-                            <a href="#services" class="btn btn-primary">Our Services</a>
-                            <a href="#projects" class="btn btn-outline">View Projects</a>
+            <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 2" hidden>
+                <div class="hero-slide-inner">
+                    <picture>
+                        <source srcset="image/hero1.webp" type="image/webp">
+                        <img 
+                            src="image/hero1.jpg" 
+                            alt="Modern building architecture" 
+                            class="hero-slide-img" 
+                            loading="lazy"
+                            width="1920"
+                            height="1080"
+                            decoding="async"
+                        >
+                    </picture>
+                    <div class="container">
+                        <div class="hero-content">
+                            <span class="hero-badge">Quality Craftsmanship</span>
+                            <h1 class="hero-title">Precision in <span>Every Detail</span></h1>
+                            <p class="hero-subtitle">Delivering exceptional quality with attention to every detail in construction and design.</p>
+                            <div class="hero-buttons">
+                                <a href="#services" class="btn btn-primary">Our Services</a>
+                                <a href="#projects" class="btn btn-outline">View Projects</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="slide-overlay"></div>
                 </div>
-                <div class="slide-overlay"></div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="hero-slide" style="background-image: url('image/hero2.jpg')">
-                <div class="container">
-                    <div class="hero-content">
-                        <span class="hero-badge">Innovative Solutions</span>
-                        <h1 class="hero-title">Transforming <span>Spaces</span></h1>
-                        <p class="hero-subtitle">Creative and functional designs that bring your vision to life with modern construction techniques.</p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary">Start Project</a>
-                            <a href="#about" class="btn btn-outline">Our Process</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-overlay"></div>
             </div>
         </div>
         
         <!-- Slider Controls -->
         <div class="slider-controls">
-            <button class="slider-prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-            <button class="slider-next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+            <button class="slider-prev" aria-label="Previous slide" aria-controls="hero-slider">
+                <span class="sr-only">Previous</span>
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="slider-next" aria-label="Next slide" aria-controls="hero-slider">
+                <span class="sr-only">Next</span>
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
         </div>
         
         <!-- Slider Indicators -->
-        <div class="slider-indicators">
-            <span class="indicator active" data-slide="0"></span>
-            <span class="indicator" data-slide="1"></span>
-            <span class="indicator" data-slide="2"></span>
+        <div class="slider-indicators" role="tablist" aria-label="Slide navigation">
+            <button class="indicator active" 
+                    role="tab" 
+                    aria-label="Slide 1" 
+                    aria-selected="true" 
+                    aria-controls="slide-1"
+                    tabindex="0">
+                <span class="sr-only">Slide 1</span>
+            </button>
+            <button class="indicator" 
+                    role="tab" 
+                    aria-label="Slide 2" 
+                    aria-selected="false" 
+                    aria-controls="slide-2"
+                    tabindex="-1">
+                <span class="sr-only">Slide 2</span>
+            </button>
+            <button class="indicator" 
+                    role="tab" 
+                    aria-label="Slide 3" 
+                    aria-selected="false" 
+                    aria-controls="slide-3"
+                    tabindex="-1">
+                <span class="sr-only">Slide 3</span>
+            </button>
         </div>
         
         <!-- Experience Badge -->
-        <div class="experience-badge">
-            <span class="years">15+</span>
-            <span class="text">Years Experience</span>
+     
+    </section>
+
+    <!-- About Our Story Section -->
+    <section id="about-our-story" class="about-our-story">
+        <div class="container">
+            <div class="about-our-story-content">
+                <div class="about-our-story-image">
+                    <img src="image/about.jpeg" alt="Arsala Builder Team" class="about-image">
+                </div>
+                <div class="about-our-story-text">
+                    <div class="section-header">
+                        <span class="section-tag">OUR STORY</span>
+                        <h2 class="section-title">Building Excellence Since 2008</h2>
+                    </div>
+                    <p>Founded in 2008, Arsala Builder has grown from a small local contractor to one of Kasaragod's most trusted construction companies. Our journey has been built on a foundation of trust, quality, and unwavering commitment to our clients' visions.</p>
+                    <p>With over 15 years of experience in the industry, we've successfully delivered more than 200 projects, ranging from residential homes to commercial complexes, each reflecting our dedication to excellence and attention to detail.</p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>15+ Years Experience</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>200+ Projects Completed</span>
+                        </div>
+                    </div>
+                    <a href="#about" class="btn btn-primary">Learn More About Us</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -249,7 +362,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/image/about.jpeg" alt="Our Construction Site" class="about-img">
+                    <img src="/image/our (1).jpeg" alt="Our Construction Site" class="about-img">
                 </div>
                 <div class="about-text">
                     <h3>Building Dreams Into Reality Since 2010</h3>
@@ -276,20 +389,7 @@
                         </div>
                     </div>
                     
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">30+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Happy Clients</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                    </div>
+                    
                     
                     <p>Our team of skilled professionals combines traditional craftsmanship with modern techniques to deliver projects that stand the test of time. We believe in building lasting relationships with our clients, based on trust, transparency, and exceptional service.</p>
                     
@@ -323,13 +423,7 @@
                     
                     <a href="#contact" class="btn">Start Your Project</a>
                 </div>
-                <div class="about-image">
-                    <img src="/image/" alt="Arsala Builder Team">
-                    <div class="experience-badge">
-                        <span class="years">15+</span>
-                        <span class="text">Years of Experience</span>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </section>
@@ -395,20 +489,23 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
+                <span class="section-tag">CONTACT US</span>
                 <h2 class="section-title">Get In Touch</h2>
                 <p class="section-subtitle">We'd love to hear about your project and how we can help bring it to life</p>
             </div>
             
             <div class="contact-container">
                 <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Have questions or need more information? Reach out to us using the details below or fill out the contact form.</p>
+                    
                     <div class="contact-method">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-text">
-                            <h3>Visit Us</h3>
-                            <p>Kasaragod, Kerala, India</p>
-                            <p>Pin: 671121</p>
+                        <div class="contact-details">
+                            <h4>Our Office</h4>
+                            <p>123 Construction Street, Kasaragod, Kerala, India - 671121</p>
                         </div>
                     </div>
                     
@@ -416,10 +513,10 @@
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="contact-text">
-                            <h3>Call Us</h3>
-                            <p><a href="tel:+919544644440">+91 9544 644 440</a></p>
-                            <p><a href="tel:+918156988580">+91 8156 988 580</a></p>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                            <p><a href="tel:+919876543211">+91 98765 43211</a></p>
                         </div>
                     </div>
                     
@@ -427,27 +524,30 @@
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div class="contact-text">
-                            <h3>Email Us</h3>
-                            <p><a href="mailto:info@arsalagroup.com">info@arsalagroup.com</a></p>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@arsalabuilder.com">info@arsalabuilder.com</a></p>
+                            <p><a href="mailto:support@arsalabuilder.com">support@arsalabuilder.com</a></p>
                         </div>
                     </div>
                     
-                    <div class="business-hours">
-                        <h3>Business Hours</h3>
-                        <p><span>Monday - Saturday:</span> 9:00 AM - 6:00 PM</p>
-                        <p><span>Sunday:</span> Closed</p>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Working Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
                     </div>
                     
                     <div class="social-links">
-                        <p>Connect With Us:</p>
-                        <div class="social-icons">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 
@@ -455,47 +555,43 @@
                     <h3>Send Us a Message</h3>
                     <p>Have questions about your project? Fill out the form below and our team will get back to you within 24 hours.</p>
                     
-                    <form id="contactForm" class="contact-form">
+                    <form id="contactForm" class="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Full Name <span class="required">*</span></label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                                <div class="invalid-feedback">Please enter your name</div>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address <span class="required">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                <label for="email" class="form-label">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a valid email address</div>
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control">
                             </div>
                             <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject">
-                                    <option value="">Select a subject</option>
-                                    <option value="residential">Residential Project</option>
-                                    <option value="commercial">Commercial Project</option>
-                                    <option value="institutional">Institutional Project</option>
-                                    <option value="industrial">Industrial Project</option>
-                                    <option value="other">Other Inquiry</option>
-                                </select>
+                                <label for="subject" class="form-label">Subject <span class="required">*</span></label>
+                                <input type="text" id="subject" name="subject" class="form-control" required>
+                                <div class="invalid-feedback">Please enter a subject</div>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Your Message <span class="required">*</span></label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                            <label for="message" class="form-label">Your Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            <div class="invalid-feedback">Please enter your message</div>
                         </div>
                         
-                        <div class="form-footer">
-                            <button type="submit" class="btn">
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">
                                 <span class="btn-text">Send Message</span>
                                 <i class="fas fa-paper-plane"></i>
                             </button>
-                            <p class="form-note">We'll get back to you within 24 hours</p>
                         </div>
                     </form>
                 </div>
@@ -524,7 +620,7 @@
                 <div class="footer-about">
                     <div class="logo-container">
                         <a href="index.html" class="footer-logo-link">
-                            <img src="images/logo.svg" alt="Arsala Builder" class="footer-logo-img">
+                            <img src="image/logo1.jpeg" alt="Arsala Builder" class="footer-logo-img">
                             <span class="footer-logo-text">Arsala Builder</span>
                         </a>
                     </div>
@@ -554,16 +650,7 @@
                         </ul>
                     </div>
                     
-                    <div class="footer-links-group">
-                        <h3>Our Services</h3>
-                        <ul>
-                            <li><a href="#services">Residential Construction</a></li>
-                            <li><a href="#services">Commercial Projects</a></li>
-                            <li><a href="#services">Institutional Buildings</a></li>
-                            <li><a href="#services">Industrial Construction</a></li>
-                            <li><a href="#services">Project Management</a></li>
-                        </ul>
-                    </div>
+                    
                     
                    
                 </div>
@@ -599,8 +686,91 @@
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <script>
+    // Preloader
+    document.addEventListener('DOMContentLoaded', function() {
+        const preloader = document.getElementById('preloader');
+        const body = document.body;
+        
+        // Hide preloader when all assets are loaded
+        window.addEventListener('load', function() {
+            // Add a small delay for better UX
+            setTimeout(function() {
+                preloader.classList.add('fade-out');
+                body.classList.remove('loading');
+                body.classList.add('loaded');
+                
+                // Remove preloader from DOM after animation completes
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 100);
+            }, 800);
+        });
+        
+        // Fallback in case load event doesn't fire
+        setTimeout(function() {
+            preloader.classList.add('fade-out');
+            body.classList.remove('loading');
+            body.classList.add('loaded');
+            
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 4000);
+    });
+    </script>
 
-    <script src="js/main.js"></script>
-    <script src="js/hero-slider.js"></script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/mobile-nav.js" defer></script>
+</main>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- jQuery (optional, only if needed) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <!-- Hero Slider Script -->
+    <script src="js/hero-slider.js" defer></script>
+    
+    <!-- Google Maps API (if needed) -->
+    <script>
+        // Initialize any scripts that need to run after the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Add loading="lazy" to iframes that don't have it
+            document.querySelectorAll('iframe:not([loading])').forEach(iframe => {
+                if (!iframe.hasAttribute('loading')) {
+                    iframe.setAttribute('loading', 'lazy');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
